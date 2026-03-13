@@ -15,6 +15,9 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+    - uses: jwlawson/actions-setup-cmake@v1.14
+      with:
+        cmake-version: '3.18.1'
     - run: |
         chmod +x ./gradlew
         sed -i 's/moduleDescription = "/moduleDescription = "(${{ github.event.inputs.package_name }}) /g' module.gradle
